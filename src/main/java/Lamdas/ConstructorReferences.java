@@ -27,6 +27,5 @@ public class ConstructorReferences {
     public static void main(String[] args) {
         MyFunc classConst = MyClass::new;
         System.out.println(classConst.func("Признание"));
-
     }
 }

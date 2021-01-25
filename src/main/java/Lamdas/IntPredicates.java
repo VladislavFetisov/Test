@@ -1,10 +1,15 @@
 package Lamdas;
 
+import Annotation.ClassPreamble;
+
 //Исследование ссылок на статические методы.
 @FunctionalInterface
 interface IntPredicate {
     boolean test(int n);
 }
+
+@ClassPreamble(
+        author = "Vladislav", date = "25.01.2021", reviewers = {})
 
 public class IntPredicates {
     static boolean isPrime(int n) {
@@ -58,12 +63,13 @@ class MyInt {
         return (n % v) == 0;
     }
 }
-class MethodReferenceDemo{
-    public static void main(String[] args) {
-        MyInt first=new MyInt(12);
-        MyInt second=new MyInt(4);
 
-        IntPredicate1 ip= first::isFactor;
+class MethodReferenceDemo {
+    public static void main(String[] args) {
+        MyInt first = new MyInt(12);
+        MyInt second = new MyInt(4);
+
+        IntPredicate1 ip = first::isFactor;
         System.out.println(ip.test(5));
     }
 }
